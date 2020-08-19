@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        
+    </style>
+    <script>
+        $(function(){
+            $("h2").css('border','2px solid #f0f');
+            $('h3.tis, #kor').css('border','3px dashed #0f0');
+
+            $('h2').next().css('color','red');
+            $('h2').parent().css('border','5px solid yellow');
+            $('#wrap').css('border','2px dashed #00f');
+            $('#list_2').css('color','blue');
+            $('#list_2').parent().css('border','2px solid #afd');
+            $('#list').next().css('border','5px solid');
+            $('#div1 h1').css({
+                "background-color":"yellow",
+                "border":"3px solid #d4a",
+                "color":"lightgreen"
+            });
+            $('#div1 > section').children().css({
+                'background-color':"#ffc",
+                'border':'3px dashed #faf'
+            })
+
+        });
+    </script>
+    
+</head>
+<body>
+    <h1>오랑우탄오병진</h1>
+    <h1 class="tis">오랑우탄인줄</h1>
+    <h2 >진짜개극혐</h2>
+    <h3 id="kor">홀리쉿</h3>
+    <h3 class="tis">ㅡㅡ</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ab!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, vitae?
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, exercitationem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquid.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, illum?
+        
+    </p>
+    <li id='wrap'>하나
+        <ul>
+            <li id='list'>둘
+                <ul>
+                    <li>리스트1</li>
+                    <li id="list_2">리스트2</li>
+                    <li>리스트3</li>
+                </ul>
+            </li>
+            <li>셋
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <div id='div1'>
+        <h1>하위요소선택자?</h1>
+        <section>
+            <h2>
+                오홍
+            </h2>
+            <p>내용</p>
+
+        </section>
+    </div>
+    
+
+</body>
+</html>

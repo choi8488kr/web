@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    <style>
+        *{font-size: 26pt; font-weight: bold;}
+        a{font-size: 26pt; font-weight: bold; color:blue;}
+        a:hover{font-size: 30pt; font-weight: bold; color:green;}
+    </style>
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="/resources/demos/style.css">
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $(document).ready(function(){
+	    $('#asp').click( function( ){
+	 	   $('#asp').text("asp area jQuery  16:00");
+	 	   $('#asp').css({"font-size":"34px", "font-weight":"bold"});
+	 	   $('#asp').css("background","pink");
+	 	   $('#asp').css("height","120px");
+	 	   $('#asp').css("border","3px solid  red");
+		});	  
+  });  
+  
+  jQuery( function( ) {       
+    $("#php").click(function(){
+    	 $('#php').text("php area jQuery  16:20");	
+         $(this).css({
+         "color" : "blue" ,
+         "background-color" : "yellow",
+         "font-size" : "34px" ,
+         "height" : "120px" ,
+         "border" : "3px solid  green"
+        });
+    });
+  });
+
+
+  $(function(){
+     $('#jsp').on('click', function( ){
+        $(this).text("jsp area jQuery  16:30");
+        $(this).css({
+            "color" : "red" ,
+            "background-color" : "yellow",
+            "font-size" : "34px" ,
+            "height" : "120px" ,
+            "border" : "3px solid  blue"
+         });
+      });
+  });
+</script>
+</head>
+<body>
+	<div id="asp">div태그 asp</div> <br>
+  	<div id="php">div태그 php</div> <br>
+    <div id="jsp">div태그 jsp</div> <br>
+<p></p>
+
+</body>
+</html>

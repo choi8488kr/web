@@ -1,0 +1,105 @@
+<HTML>
+	<HEAD>
+	
+	<script type="text/javascript">
+		//var  flag=false;
+		var sunsu = new Array( );
+		var temp = 1;
+		var imgsource1 = new Array("1.gif", "2.gif", "3.gif", "4.gif", "5.gif","6.gif", "7.gif",
+			"8.gif", "9.gif", "10.gif", "11.gif", "12.gif", "13.gif", "14.gif", "15.gif","blink.gif");
+		var imgsource2 = new Array("1.gif", "2.gif", "3.gif", "4.gif", "5.gif","6.gif", "7.gif",
+		"8.gif", "9.gif", "10.gif", "11.gif", "12.gif", "13.gif", "14.gif", "15.gif","blink.gif");
+		var blink = 0;
+	
+		function start( ) { //시작버튼클릭시 호출되는 함수
+			 for(a=0; a<16 ; a++){
+				  sunsu[a] = Math.round(Math.random()*15); //난수 
+			   for(b=0 ; b<a ; b++){
+				if( sunsu[a] ==  sunsu[b]) {  a--;  } //중복체크 
+				}// for b end 
+				//console.log(blink);
+			} //for a end
+	
+			mix( );  //그림섞기
+		}//start end
+	
+	
+		function  mix( ){
+			for(i=0; i<16; i++) {
+			   document.images[i].src = imgsource1[sunsu[i]];
+			   if (sunsu[i]==15) blink = i;
+			} 
+		}// mix end
+		function change(k){
+				document.images[k].src = imgsource1[sunsu[blink]];
+				document.images[blink].src = imgsource1[sunsu[k]];
+
+				blink_img = imgsource1[sunsu[blink]];
+				imgsource1[sunsu[blink]] = imgsource1[sunsu[k]];
+				imgsource1[sunsu[k]]=blink_img;
+
+				ori_num=k;
+				k=blink;
+				blink=ori_num;
+		}
+	
+		function move(k) {
+	
+			if(blink%4==3){
+         if(k==(blink-1)||k==(blink-4)||k==(blink+4))
+            	change(k);
+     	 }else if(blink%4==0){
+         	if(k==(blink+1)||k==(blink+4)||k==(blink-4))
+      	      change(k);
+     	 }else if(k==(blink+1)||k==(blink-1)||k==(blink+4)||k==(blink-4))
+				change(k);
+		
+
+
+			//change(k)	;
+			var cnt=0;
+			for(j=0; j<16; j++){
+				if(imgsource1[sunsu[j]]==imgsource2[j]){
+					cnt++;
+				}
+			}
+			console.log(cnt);
+			if(cnt==16){bingo();}
+
+			
+
+		}// move end
+	
+		function bingo( ){
+			
+				alert("ㅅㄱ");
+
+			
+	//		console.log(cnt);
+			
+		}// bingo end
+	</script>
+	</head>
+	
+	<body>
+	<font  size=7  color=green> <b> 퍼즐게임 </b></font><br>
+	<form>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id="btn_name" type = "button" value = "  시&nbsp;&nbsp;&nbsp;&nbsp;작  " 
+		 onClick = "start( )"   style="font-size:24pt; font-style:bold; " > <p>
+	</form>
+	
+	<script type="text/javascript">
+		imgsource = new Array("1.gif", "2.gif", "3.gif", "4.gif", "5.gif", "6.gif", "7.gif", "8.gif",
+				  "9.gif", "10.gif", "11.gif", "12.gif", "13.gif", "14.gif", "15.gif", "16.gif") ;
+	
+		for (i =0 ; i<16 ; i++){
+		  document.write("<img src=" + imgsource[i] + " border = 1 onClick = 'move(" + i + ")'>") ;
+		  if (((i+1)%4)==0) document.write("<br>") ;
+		}
+	</script>
+	
+	</body>
+	</html>
+	
+	
